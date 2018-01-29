@@ -7,7 +7,7 @@ Caster is a generator that creates a skeleton project containing configuration f
 ## Usage
 
 ```
-$ npm install @bitpshr.net/caster
+$ npm i -g @bitpshr.net/caster
 $ caster  
 $
 $    ____    _    ____ _____ _____ ____  
