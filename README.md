@@ -6,20 +6,9 @@ Caster is a generator that creates a skeleton project containing configuration f
 
 ## Usage
 
-```
+```sh
 $ npm i -g @bitpshr.net/caster
-$ caster  
-$
-$    ____    _    ____ _____ _____ ____  
-$   / ___|  / \  / ___|_   _| ____|  _ \ 
-$  | |     / _ \ \___ \ | | |  _| | |_) |
-$  | |___ / ___ \ ___) || | | |___|  _ < 
-$   \____/_/   \_\____/ |_| |_____|_| \_\
-$
-$                                     
-$  ? What's the package name? (my-package)
-$  ? What's the package description? ()
-$  ? Does the package use CSS? (y/N)
+$ caster
 ```
 
 ## License
