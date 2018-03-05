@@ -15,12 +15,12 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "prettier --write --ignore-path .gitignore",
+      "prettier --write",
       "eslint",
       "git add"
     ],
     "{!(package|package-lock),}.json": [
-      "prettier --write --ignore-path .gitignore",
+      "prettier --write",
       "git add"
     ]
   },
