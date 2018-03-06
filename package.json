@@ -9,6 +9,7 @@
     "css modules",
     "eslint",
     "generator",
+    "jest",
     "linting",
     "prettier",
     "skeleton"
