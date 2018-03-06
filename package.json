@@ -2,8 +2,17 @@
   "name": "@bitpshr.net/caster",
   "version": "1.1.3",
   "description": "Caster generates package skeletons pre-configured for testing, linting, and formatting.",
-  "license": "WTFPL",
   "repository": "github:bitpshr/caster",
+  "license": "WTFPL",
+  "keywords": [
+    "caster",
+    "css modules",
+    "eslint",
+    "generator",
+    "linting",
+    "prettier",
+    "skeleton"
+  ],
   "files": [
     "index.js",
     "template"
