@@ -3,6 +3,10 @@
   "version": "1.1.1",
   "description": "Caster generates package skeletons pre-configured for testing, linting, and formatting.",
   "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitpshr/caster.git"
+  },
   "files": [
     "index.js",
     "template"
