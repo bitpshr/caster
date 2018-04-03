@@ -135,9 +135,10 @@ function execute(cmd, cwd, silent = true) {
 			`\n  ${chalk.bold(chalk.green('Success!'))} Generated ${config.name} at ${path.resolve(config.name)}.`
 		);
 		console.log('  The following commands are available within that directory:\n');
-		console.log(`  ${chalk.cyan('npm run eslint')}       Lints JavaScript files`);
-		console.log(`  ${chalk.cyan('npm run test')}         Runs JavaScript unit tests`);
-		config.css && console.log(`  ${chalk.cyan('npm run stylelint')}    Lints CSS files`);
+		config.tech.js && console.log(`  ${chalk.cyan('npm run test')}            Runs JavaScript unit tests`);
+		config.tech.js && console.log(`  ${chalk.cyan('npm run eslint')}          Lints JavaScript files`);
+		config.tech.css && console.log(`  ${chalk.cyan('npm run stylelint')}       Lints CSS files`);
+		console.log(`  ${chalk.cyan('npm run prettier')}        Format files`);
 		console.log(chalk.bold('\n  Lock and load.\n\n'));
 	} catch (error) {
 		// Error outro logging

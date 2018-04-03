@@ -27,20 +27,15 @@
     "prettier": "prettier {**/*.{js,jsx},**/{!package,!package-lock}.json} --ignore-path .gitignore --write"
   },
   "lint-staged": {
-    "ignore": [
-      "template"
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint",
+      "git add"
     ],
-    "linters": {
-      "*.{js,jsx}": [
-        "prettier --ignore-path .gitignore --write",
-        "eslint --ignore-path .gitignore",
-        "git add"
-      ],
-      "{!(package|package-lock),}.json": [
-        "prettier --ignore-path .gitignore --write",
-        "git add"
-      ]
-    }
+    "{!(package|package-lock),}.json": [
+      "prettier--write",
+      "git add"
+    ]
   },
   "dependencies": {
     "chalk": "^2.3.0",

@@ -4,7 +4,7 @@
   "description": "<%= description %>",
   "license": "WTFPL",
   "scripts": {
-    "precommit": "lint-staged"<% if (tech.js) { %>,
+    "precommit": "lint-staged",<% if (tech.js) { %>
     "eslint": "eslint **/*.{js,jsx}",
     "test": "jest --coverage --config=.jestrc.json",<% } %><% if (tech.css) { %>
     "stylelint": "stylelint **/*.css",<% } %>
