@@ -15,7 +15,7 @@
 	"plugins": ["react"],<% } %>
 	"extends": ["eslint:recommended"<% if (tech.react) { %>, "plugin:react/recommended"<% } %>],
 	"rules": {
-		"no-console": 0<% if (tech.react) { %>,
+		"no-console": ["off"]<% if (tech.react) { %>,
 		"react/jsx-uses-react": ["error"],
 		"react/jsx-uses-vars": ["error"],
 		"react/prop-types": ["warn"],
