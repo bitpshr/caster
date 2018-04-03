@@ -39,7 +39,7 @@ function collectInput() {
 			message: 'What technologies does the package use?',
 			name: 'tech',
 			type: 'checkbox',
-			choices: ['css', 'js']
+			choices: ['css', 'js', 'react']
 		}
 	]);
 }
@@ -53,7 +53,8 @@ function collectInput() {
 function sanitizeInput(config) {
 	config.tech = {
 		css: config.tech.includes('css'),
-		js: config.tech.includes('js')
+		js: config.tech.includes('js'),
+		react: config.tech.includes('react')
 	};
 	return config;
 }

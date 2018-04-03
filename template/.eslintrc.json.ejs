@@ -12,7 +12,7 @@
 		"jest": true,
 		"node": true
 	},
-	"extends": ["eslint:recommended"],
+	"extends": ["eslint:recommended"<% if (tech.react) { %>, "plugin:react/recommended"<% } %>],
 	"rules": {
 		"no-console": 0
 	}

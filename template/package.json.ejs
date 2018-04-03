@@ -39,7 +39,10 @@
       "babel-eslint": "^8.2.1",
       "eslint": "^4.16.0",
       "jest": "^22.1.4",
-    <% } %>
+	<% } %>
+	<% if (tech.react) { %>
+	  "eslint-plugin-react": "^7.7.0",
+	<% } %>
     "husky": "^0.14.3",
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2"<% if (tech.css) { %>,
