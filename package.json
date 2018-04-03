@@ -1,6 +1,6 @@
 {
   "name": "@bitpshr.net/caster",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Caster generates package skeletons pre-configured for testing, linting, and formatting.",
   "repository": "github:bitpshr/caster",
   "license": "WTFPL",
