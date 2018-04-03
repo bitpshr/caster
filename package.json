@@ -23,7 +23,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "eslint": "eslint **/*.{js,jsx}",
+    "eslint": "eslint '**/*.{js,jsx}'",
     "prettier": "prettier **/*.{json,css,js,jsx} --write"
   },
   "lint-staged": {

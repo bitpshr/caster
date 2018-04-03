@@ -6,7 +6,7 @@
   "scripts": {
     "precommit": "lint-staged",
     <% if (tech.js) { %>
-      "eslint": "eslint **/*.{js,jsx}",
+      "eslint": "eslint '**/*.{js,jsx}'",
       "test": "jest --coverage --config=.jestrc.json",
     <% } %>
     <% if (tech.css) { %>
