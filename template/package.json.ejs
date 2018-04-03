@@ -1,0 +1,50 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "license": "WTFPL",
+  "scripts": {
+    "precommit": "lint-staged",
+    <% if (tech.js) { %>
+      "eslint": "eslint **/*.{js,jsx}",
+      "test": "jest --coverage --config=.jestrc.json",
+    <% } %>
+    <% if (tech.css) { %>
+      "stylelint": "stylelint **/*.css",
+    <% } %>
+    "prettier": "prettier **/*.{json<% if (tech.css) { %>,css<% } %><% if (tech.js) { %>,js,jsx<% } %>} --write"
+  },
+  "lint-staged": {
+    <% if (tech.css) { %>
+      "*.css": [
+        "prettier --write",
+        "stylelint",
+        "git add"
+      ],
+    <% } %>
+    <% if (tech.js) { %>
+      "*.{js,jsx}": [
+        "prettier --write",
+        "eslint",
+        "git add"
+      ],
+    <% } %>
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    <% if (tech.js) { %>
+      "babel-eslint": "^8.2.1",
+      "eslint": "^4.16.0",
+      "jest": "^22.1.4",
+    <% } %>
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2"<% if (tech.css) { %>,
+      "stylelint-config-prettier": "^3.0.4",
+      "stylelint": "^8.4.0"
+    <% } %>
+  }
+}

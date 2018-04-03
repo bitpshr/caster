@@ -59,6 +59,19 @@ function sanitizeInput(config) {
 }
 
 /**
+ * Utility function to sanitize EJS file endings
+ *
+ * @param {string} filePath - path to a file
+ * @returns {string} - path to a file with no .ejs extension
+ */
+function sanitizePath(filePath) {
+	if (path.extname(filePath) === '.ejs') {
+		filePath = filePath.replace(/\.ejs$/, '');
+	}
+	return filePath;
+}
+
+/**
  * Utility function to determine if a file should be rendered
  *
  * @param {object} config - user input configuration object
@@ -87,7 +100,7 @@ async function generateStructure(config) {
 	for (const absolutePath of filePaths) {
 		if (shouldRenderFile(config, absolutePath)) {
 			const relativePath = path.relative('./template', path.relative(__dirname, absolutePath));
-			const newPath = path.join(config.name, relativePath);
+			const newPath = sanitizePath(path.join(config.name, relativePath));
 			const data = await new Promise(resolve => {
 				ejs.renderFile(absolutePath, config, (e, file) => resolve(file));
 			});
@@ -142,6 +155,6 @@ function execute(cmd, cwd, silent = true) {
 		console.log(chalk.bold('\n  Lock and load.\n\n'));
 	} catch (error) {
 		// Error outro logging
-		console.log(`\n  ${chalk.bold(chalk.red('Failure.'))} Something went horribly, horribly wrong.`);
+		console.log(`\n  ${chalk.bold(chalk.red('Failure.'))} Something went horribly, horribly wrong.\n\n`);
 	}
 })();
