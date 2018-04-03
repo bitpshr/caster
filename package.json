@@ -1,6 +1,6 @@
 {
   "name": "@bitpshr.net/caster",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "Caster generates package skeletons pre-configured for testing, linting, and formatting.",
   "repository": "github:bitpshr/caster",
   "license": "WTFPL",
@@ -27,7 +27,9 @@
     "prettier": "prettier {**/*.{js,jsx},**/{!package,!package-lock}.json} --ignore-path .gitignore --write"
   },
   "lint-staged": {
-    "ignore": ["template"],
+    "ignore": [
+      "template"
+    ],
     "linters": {
       "*.{js,jsx}": [
         "prettier --ignore-path .gitignore --write",
