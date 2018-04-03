@@ -12,7 +12,7 @@ const read = require('recursive-readdir');
 const shell = require('shelljs');
 
 const CSS_WHITELIST = ['.stylelintrc'];
-const JS_WHITELIST = ['.eslintrc.json', '.jestrc.json'];
+const JS_WHITELIST = ['.eslintrc.ejs', '.jestrc.json.ejs'];
 const REACT_WHITELIST = ['testSetup.js'];
 
 /**
