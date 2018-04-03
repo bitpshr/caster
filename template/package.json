@@ -6,19 +6,19 @@
   "scripts": {
     "precommit": "lint-staged"<% if (tech.js) { %>,
     "eslint": "eslint **/*.{js,jsx}",
-    "test": "jest --coverage --config=.jestrc.json"<% } %><% if (tech.css) { %>,
-    "stylelint": "stylelint **/*.css --ignore-path .gitignore",<% } %>
+    "test": "jest --coverage --config=.jestrc.json",<% } %><% if (tech.css) { %>
+    "stylelint": "stylelint **/*.css",<% } %>
     "prettier": "prettier {*.{<% if (tech.css) { %>css,<% } %><% if (tech.js) { %>js,jsx<% } %>},{!package,!package-lock}.json} --write"
   },
   "lint-staged": {
     <% if (tech.css) { %>"*.css": [
       "prettier --write --ignore-path .gitignore",
-      "stylelint --ignore-path .gitignore",
+      "stylelint",
       "git add"
     ],<% } %>
     <% if (tech.js) { %>"*.{js,jsx}": [
       "prettier --write --ignore-path .gitignore",
-      "eslint --ignore-path .gitignore",
+      "eslint",
       "git add"
     ],<% } %>
     "{!(package|package-lock),}.json": [
@@ -33,7 +33,7 @@
     <% if (tech.js) { %>"jest": "^22.1.4",<% } %>
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2"<% if (tech.css) { %>,
-    "stylelint-config-standard": "^18.0.0",
+    "stylelint-config-prettier": "^3.0.4",
     "stylelint": "^8.4.0"<% } %>
   }
 }
