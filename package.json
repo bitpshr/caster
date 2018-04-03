@@ -22,18 +22,23 @@
     "caster": "./index.js"
   },
   "scripts": {
-    "eslint": "eslint **/*.{js,jsx}"
+    "precommit": "lint-staged",
+    "eslint": "eslint **/*.{js,jsx} --ignore-path .gitignore",
+    "prettier": "prettier {**/*.{js,jsx},**/{!package,!package-lock}.json} --ignore-path .gitignore --write"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "eslint",
-      "git add"
-    ],
-    "{!(package|package-lock),}.json": [
-      "prettier --write",
-      "git add"
-    ]
+    "ignore": ["template"],
+    "linters": {
+      "*.{js,jsx}": [
+        "prettier --ignore-path .gitignore --write",
+        "eslint --ignore-path .gitignore",
+        "git add"
+      ],
+      "{!(package|package-lock),}.json": [
+        "prettier --ignore-path .gitignore --write",
+        "git add"
+      ]
+    }
   },
   "dependencies": {
     "chalk": "^2.3.0",
@@ -51,6 +56,6 @@
     "eslint": "^4.16.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.0",
-    "prettier": "^1.10.2"
+    "prettier": "^1.11.1"
   }
 }

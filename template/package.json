@@ -4,38 +4,36 @@
   "description": "<%= description %>",
   "license": "WTFPL",
   "scripts": {
+    "precommit": "lint-staged"<% if (tech.js) { %>,
     "eslint": "eslint **/*.{js,jsx}",
-    <% if (css) { %>
-      "stylelint": "stylelint **/*.css --ignore-path .gitignore",
-    <% } %>
-    "test": "jest --coverage --config=.jestrc.json"
+    "test": "jest --coverage --config=.jestrc.json"<% } %><% if (tech.css) { %>,
+    "stylelint": "stylelint **/*.css --ignore-path .gitignore",<% } %>
+    "prettier": "prettier {*.{<% if (tech.css) { %>css,<% } %><% if (tech.js) { %>js,jsx<% } %>},{!package,!package-lock}.json} --write"
   },
   "lint-staged": {
-    <% if (css) { %>
-      "*.css": [
-        "prettier --write --ignore-path .gitignore",
-        "stylelint",
-        "git add"
-      ],
-    <% } %>
-    "*.{js,jsx}": [
+    <% if (tech.css) { %>"*.css": [
       "prettier --write --ignore-path .gitignore",
-      "eslint",
+      "stylelint --ignore-path .gitignore",
       "git add"
-    ],
+    ],<% } %>
+    <% if (tech.js) { %>"*.{js,jsx}": [
+      "prettier --write --ignore-path .gitignore",
+      "eslint --ignore-path .gitignore",
+      "git add"
+    ],<% } %>
     "{!(package|package-lock),}.json": [
       "prettier --write --ignore-path .gitignore",
       "git add"
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.16.0",
+    <% if (tech.js) { %>"babel-eslint": "^8.2.1",<% } %>
+    <% if (tech.js) { %>"eslint": "^4.16.0",<% } %>
     "husky": "^0.14.3",
-    "jest": "^22.1.4",
+    <% if (tech.js) { %>"jest": "^22.1.4",<% } %>
     "lint-staged": "^6.1.0",
-    "prettier": "^1.10.2"<% if (css) { %>,
-      "stylelint-config-standard": "^18.0.0",
-      "stylelint": "^8.4.0"<% } %>
+    "prettier": "^1.10.2"<% if (tech.css) { %>,
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint": "^8.4.0"<% } %>
   }
 }
