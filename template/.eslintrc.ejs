@@ -13,7 +13,7 @@
 		"node": true
 	},<% if (tech.react) { %>
 	"plugins": ["react"],<% } %>
-	"extends": ["eslint:recommended"<% if (tech.react) { %>, "plugin:react/recommended"<% } %>],
+	"extends": ["eslint:recommended", "prettier"<% if (tech.react) { %>, "plugin:react/recommended"<% } %>],
 	"rules": {
 		"no-console": ["off"]<% if (tech.react) { %>,
 		"react/jsx-uses-react": ["error"],

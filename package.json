@@ -51,6 +51,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.16.0",
+    "eslint-config-prettier": "^2.9.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.0",
     "prettier": "^1.11.1"
