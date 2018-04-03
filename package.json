@@ -33,7 +33,7 @@
       "git add"
     ],
     "{!(package|package-lock),}.json": [
-      "prettier--write",
+      "prettier --write",
       "git add"
     ]
   },
