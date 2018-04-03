@@ -11,9 +11,9 @@ const path = require('path');
 const read = require('recursive-readdir');
 const shell = require('shelljs');
 
-const JS_WHITELIST = ['.eslintrc.json', '.jestrc.json'];
-
 const CSS_WHITELIST = ['.stylelintrc'];
+const JS_WHITELIST = ['.eslintrc.json', '.jestrc.json'];
+const REACT_WHITELIST = ['testSetup.js'];
 
 /**
  * Collects user input for app configuration
@@ -84,6 +84,9 @@ function shouldRenderFile(config, filePath) {
 		return false;
 	}
 	if (!config.tech.css && CSS_WHITELIST.includes(path.basename(filePath))) {
+		return false;
+	}
+	if (!config.tech.react && REACT_WHITELIST.includes(path.basename(filePath))) {
 		return false;
 	}
 	return true;
