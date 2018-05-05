@@ -6,13 +6,13 @@
   "scripts": {
     "precommit": "lint-staged",
     <% if (tech.js) { %>
-      "eslint": "eslint '**/*.{js,jsx}'",
+      "eslint": "eslint '{*,**/*}.{js,jsx}'",
       "test": "jest --coverage --config=.jestrc.json",
     <% } %>
     <% if (tech.css) { %>
-      "stylelint": "stylelint **/*.css",
+      "stylelint": "stylelint '{*,**/*}.css'",
     <% } %>
-    "prettier": "prettier **/*.{json<% if (tech.css) { %>,css<% } %><% if (tech.js) { %>,js,jsx<% } %>} --write"
+    "prettier": "prettier '{*,**/*}.{json<% if (tech.css) { %>,css<% } %><% if (tech.js) { %>,js,jsx<% } %>}' --write"
   },
   "lint-staged": {
     <% if (tech.css) { %>
